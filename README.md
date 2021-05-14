@@ -1,5 +1,5 @@
 <p align="center">
-<img src="images/logoK8s.png" width="150" height ="150" />
+<img src="logo.png" width="150" height ="150" />
 <br><br>
 
 # Kubernetes - Быстрый старт

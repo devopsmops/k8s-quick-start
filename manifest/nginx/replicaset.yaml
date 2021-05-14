@@ -2,20 +2,26 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
- name: my-app
+ name: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: nginx
   template:
     metadata:
       labels:
-        app: my-app
-        custom: test-app
+        app: nginx
     spec:
       containers:
-      - image: idwarlock/gb-hello:v1
-        name: gb-hello
+      - image: nginx
+        name: nginx
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: config
+          mountPath: /etc/nginx/conf.d/
+      volumes:
+      - name: config
+        configMap:
+          name: my-configmap
