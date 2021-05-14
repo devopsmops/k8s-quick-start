@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: my-app
+        custom: test-app
     spec:
       containers:
       - image: idwarlock/gb-hello:v1
